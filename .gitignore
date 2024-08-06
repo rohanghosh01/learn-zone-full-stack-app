@@ -1,6 +1,6 @@
 # Ignore node_modules for all projects
 **/node_modules
-**/config
+**/config.json
 
 
 # Ignore log files
