@@ -3,7 +3,7 @@ const fs = require("fs");
 require("dotenv").config();
 const { argv } = require("yargs");
 
-// SETUP
+// SETUP 
 if (!fs.existsSync("./config/")) {
   fs.mkdirSync("./config/", { recursive: true });
 }
