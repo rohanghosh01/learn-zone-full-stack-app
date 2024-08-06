@@ -1,0 +1,24 @@
+{
+  "apps": [
+    {
+      "name": "backend",
+      "script": "npm start",
+      "cwd": "./backend",
+      "watch": true
+    },
+
+    {
+      "name": "socketIO",
+      "script": "npm start",
+      "cwd": "./socketIO",
+      "watch": true
+    },
+
+    {
+      "name": "frontend",
+      "script": "npm run dev",
+      "cwd": "./frontend",
+      "watch": true
+    }
+  ]
+}

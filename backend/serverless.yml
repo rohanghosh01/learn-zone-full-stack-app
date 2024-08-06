@@ -1,0 +1,58 @@
+# service: post-services
+
+frameworkVersion: "3"
+
+custom:
+  secrets: ${file(config/config.json)}
+  # customDomain:
+  #   domainName: ${self:custom.secrets.domain}
+  #   basePath: ${self:custom.secrets.base_path}
+  #   stage: ${self:custom.secrets.NODE_ENV}
+  #   createRoute53Record: true
+
+  serverless-offline:
+    httpPort: ${self:custom.secrets.PORT}
+    # lambdaPort:
+    # host: 192.168.1.229
+service: ${self:custom.secrets.SERVICE}
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  stage: ${self:custom.secrets.NODE_ENV}
+  region: ${self:custom.secrets.S3_REGION}
+  layers:
+    - arn:aws:lambda:ap-south-1:339713064124:layer:learnzone:8
+
+functions:
+  app:
+    handler: app.server # reference the file and exported method
+    events: # events trigger lambda functions
+      - http: # this is an API Gateway HTTP event trigger
+          path: /
+          method: ANY
+          cors:
+            origin: "*"
+            headers:
+              - Content-Type
+              - Authorization
+              - language
+
+      - http: # all routes get proxy to the Express router
+          path: /{proxy+}
+          method: ANY
+          cors:
+            origin: "*"
+            headers:
+              - Content-Type
+              - Authorization
+              - language
+
+plugins:
+  - serverless-offline
+
+package:
+  exclude:
+    - venv/**
+    - .git/**
+    - node_modules/**

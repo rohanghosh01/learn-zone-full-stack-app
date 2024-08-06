@@ -1,0 +1,70 @@
+# Ignore node_modules for all projects
+**/node_modules
+
+
+
+# Ignore log files
+**/logs
+*.log
+npm-debug.log*
+
+# Ignore .env files (containing sensitive information)
+**/.env
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
+**/.env.Dev
+
+
+# Ignore build outputs
+/frontend/.next
+/backend/.serverless
+/socketIO/dist
+
+# Ignore Next.js specific files
+/frontend/.next
+/frontend/out
+/frontend/.vercel
+/frontend/.swc
+
+# Ignore Serverless framework specific files
+/backend/.serverless
+/backend/.middleware
+
+# Ignore other system files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE specific files
+.vscode
+.idea
+
+# Ignore yarn lock files (if not using yarn)
+yarn.lock
+
+# Ignore package-lock.json (if not using npm)
+package-lock.json
+
+# Ignore coverage reports
+**/coverage
+
+# Ignore dependency directories for various tools
+**/jspm_packages/
+**/typings/
+**/.pnp
+**/.pnp.js
+
+# Ignore OS generated files
+*.swp
+*~
+
+# Ignore files related to debugging
+*.log
+*.trace
+*.local
+
+# Ignore temporary files
+*.tmp
+*.temp
+

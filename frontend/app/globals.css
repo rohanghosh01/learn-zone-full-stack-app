@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.error-message {
+  color: red;
+  font-size: 13px;
+}
+
+.grid-video {
+  width: 350px !important;
+  height: 200px !important;
+}
+.video-js {
+  width: 640px;
+  height: 460px;
+}
+
+/* Media query for smaller devices */
+@media only screen and (max-width: 768px) {
+  .video-js {
+    width: 450px; /* Set width to 100% for smaller devices */
+    height: 360px; /* Allow height to adjust automatically */
+  }
+}
+/* Media query for smaller devices */
+@media only screen and (max-width: 1280px) {
+  .grid-video {
+    width: 300px !important;
+    height: 200px !important;
+    text-align: center;
+  }
+}
+
+/* Media query for larger devices */
+@media only screen and (max-width: 450px) {
+  .video-js {
+    width: 300px; /* Adjust width for larger devices */
+    height: 450px; /* Adjust height for larger devices */
+    text-align: center;
+  }
+  .grid-video {
+    width: 250px !important;
+    height: 200px !important;
+    text-align: center;
+  }
+}
+
+.sc-aXZVg {
+  height: 100%;
+}
+image {
+  max-height: 460px;
+}
+.view-reply::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background-color: gray;
+  margin-right: 10px;
+  position: relative;
+  top: 10px;
+}
+
+.chat-scroll {
+  overflow: hidden scroll;
+  position: relative;
+
+  /* &::-webkit-scrollbar {
+    width: 0.4em;
+    height: 0.5em;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  } */
+}
+
+::-webkit-scrollbar {
+  height: 1rem;
+  width: 0.4rem;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: hsla(0, 0%, 100%, 0.1);
+}
+::-webkit-scrollbar-thumb {
+  --tw-border-opacity: 1;
+  background-color: hsla(0, 0%, 89%, 0.8);
+  border-color: rgba(255, 255, 255, var(--tw-border-opacity));
+  border-radius: 9999px;
+  border-width: 1px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(227, 227, 227, var(--tw-bg-opacity));
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: hsla(0, 0%, 100%, 0.3);
+}
+
+.theme-switcher {
+  width: 48px;
+  height: 27px;
+  border-radius: 50px;
+  padding: 2px;
+  background: hsla(0, 0%, 63%, 0.35);
+  display: flex;
+  align-items: center;
+}
+
+.theme-switcher .theme-icon {
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.theme-switcher .theme-icon.active {
+  background: #8f75b1;
+}
